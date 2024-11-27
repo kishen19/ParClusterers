@@ -68,11 +68,13 @@ def readConfig(filename):
   global clusterer_configs, num_rounds, timeout, clusterer_config_names
   global gbbs_format
   global weighted
+  global is_hierarchical
   global tigergraph_edges, tigergraph_nodes
   global postprocess_only, write_clustering
   num_threads = num_rounds = timeout = gbbs_format = weighted = tigergraph_edges = tigergraph_nodes = None
   postprocess_only = "false"
   write_clustering = "true"
+  is_hierarchical = "false"
   clusterers = []
   with open(filename, "r") as in_file:
     for line in in_file:
@@ -109,6 +111,8 @@ def readConfig(filename):
           tigergraph_edges = [x.strip() for x in split[1].split(';')]
         elif split[0].startswith("Wighted") and len(split) > 1:
           weighted = split[1]
+        elif split[0].startswith("Hierarchical") and len(split) > 1:
+          is_hierarchical = split[1]
         elif split[0].startswith("Postprocess only"):
           postprocess_only = split[1]
         elif split[0].startswith("Write clustering"):

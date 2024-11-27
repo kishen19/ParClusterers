@@ -132,14 +132,18 @@ absl::Status WriteClusteringNoZeroDegree(const char* filename,
   return absl::OkStatus();
 }
 
-absl::Status WriteClustering(const char* filename,
-                             InMemoryClusterer::Dendrogram clustering) {
+absl::Status WriteDendrogram(const char* filename,
+                             graph_mining::in_memory::Dendrogram dendrogram) {
+  auto kNoParentId = graph_mining::in_memory::Dendrogram::kNoParentId;
   std::ofstream file{filename};
   if (!file.is_open()) {
     return absl::NotFoundError("Unable to open file.");
   }
-  for (gbbs::uintE i = 0; i < clustering.size(); i++) {
-    file << clustering[i] << std::endl;
+  auto nodes = dendrogram.Nodes();
+  for (gbbs::uintE i = 0; i < nodes.size(); i++) {
+    if (nodes[i].parent_id != kNoParentId){
+      file << i << " " << nodes[i].parent_id << " " << nodes[i].merge_similarity << std::endl;
+    }
   }
   return absl::OkStatus();
 }
@@ -283,12 +287,19 @@ absl::Status Main() {
   std::cout << "Calling clustering." << std::endl;
   if (is_hierarchical) {
     // TODO(jeshi): Not fully implemented
-    InMemoryClusterer::Dendrogram dendrogram;
-    ASSIGN_OR_RETURN(dendrogram, clusterer->HierarchicalCluster(config));
+    // InMemoryClusterer::Dendrogram dendrogram;
+    std::cout << "Here." << std::endl;
+
+    // if (using_google_clusterer){
+    ASSIGN_OR_RETURN(auto dendrogram, clusterer_google->HierarchicalCluster(config_google));
+    // }else{
+    //   ASSIGN_OR_RETURN(auto dendrogram, clusterer->HierarchicalCluster(config));
+    // }
+    std::cout << "Here: Dend computed." << std::endl;
     // TODO(jeshi): Writing pre-emptively for testing.
     auto end_cluster = std::chrono::steady_clock::now();
     PrintTime(begin_cluster, end_cluster, "Cluster");
-    return WriteClustering(output_file.c_str(), dendrogram);
+    return WriteDendrogram(output_file.c_str(), dendrogram);
   } else {
     if (using_google_clusterer){
       ASSIGN_OR_RETURN(auto clustering, clusterer_google->Cluster(config_google));
