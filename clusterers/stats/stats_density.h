@@ -23,7 +23,7 @@
 #include "parcluster/api/in-memory-clusterer-base.h"
 #include "parcluster/api/status_macros.h"
 
-#include "external/gbbs/benchmarks/TriangleCounting/ShunTangwongsan15/Triangle.h"
+#include "benchmarks/TriangleCounting/ShunTangwongsan15/Triangle.h"
 
 namespace research_graph::in_memory {
 

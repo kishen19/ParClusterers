@@ -26,11 +26,11 @@
 #include "parcluster/api/in-memory-clusterer-base.h"
 #include "parcluster/api/parallel/parallel-graph-utils.h"
 #include "parcluster/api/status_macros.h"
-#include "external/gbbs/benchmarks/TriangleCounting/ShunTangwongsan15/Triangle.h"
+#include "benchmarks/TriangleCounting/ShunTangwongsan15/Triangle.h"
 #include "benchmarks/DegeneracyOrder/GoodrichPszona11/DegeneracyOrder.h"
 #include "benchmarks/DegeneracyOrder/BarenboimElkin08/DegeneracyOrder.h"
 #include "benchmarks/KCore/JulienneDBS17/KCore.h"
-#include "external/gbbs/benchmarks/Connectivity/SimpleUnionAsync/Connectivity.h"
+#include "benchmarks/Connectivity/SimpleUnionAsync/Connectivity.h"
 
 namespace gbbs {
 

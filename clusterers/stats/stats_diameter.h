@@ -23,8 +23,8 @@
 #include "parcluster/api/in-memory-clusterer-base.h"
 #include "parcluster/api/status_macros.h"
 
-#include "external/gbbs/benchmarks/GeneralWeightSSSP/BellmanFord/BellmanFord.h"
-#include "external/gbbs/benchmarks/Connectivity/SimpleUnionAsync/Connectivity.h"
+#include "benchmarks/GeneralWeightSSSP/BellmanFord/BellmanFord.h"
+#include "benchmarks/Connectivity/SimpleUnionAsync/Connectivity.h"
 
 namespace research_graph::in_memory {
 

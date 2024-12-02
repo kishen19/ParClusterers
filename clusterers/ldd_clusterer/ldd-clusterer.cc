@@ -8,7 +8,7 @@
 #include "clusterers/ldd_clusterer/ldd_config.pb.h"
 
 #include "absl/status/statusor.h"
-#include "external/gbbs/benchmarks/LowDiameterDecomposition/MPX13/LowDiameterDecomposition.h"
+#include "benchmarks/LowDiameterDecomposition/MPX13/LowDiameterDecomposition.h"
 #include "parcluster/api/config.pb.h"
 #include "parcluster/api/gbbs-graph.h"
 #include "parcluster/api/in-memory-clusterer-base.h"

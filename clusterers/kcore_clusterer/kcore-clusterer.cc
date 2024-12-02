@@ -7,8 +7,8 @@
 
 #include "clusterers/kcore_clusterer/kcore_config.pb.h"
 #include "absl/status/statusor.h"
-#include "external/gbbs/benchmarks/Connectivity/SimpleUnionAsync/Connectivity.h"
-#include "external/gbbs/benchmarks/KCore/JulienneDBS17/KCore.h"
+#include "benchmarks/Connectivity/SimpleUnionAsync/Connectivity.h"
+#include "benchmarks/KCore/JulienneDBS17/KCore.h"
 #include "parcluster/api/config.pb.h"
 #include "parcluster/api/gbbs-graph.h"
 #include "parcluster/api/in-memory-clusterer-base.h"

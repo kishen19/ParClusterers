@@ -23,9 +23,9 @@
 #include "parcluster/api/config.pb.h"
 #include "parcluster/api/in-memory-clusterer-base.h"
 #include "parcluster/api/parallel/parallel-graph-utils.h"
-#include "external/gbbs/gbbs/bridge.h"
-#include "external/gbbs/gbbs/gbbs.h"
-#include "external/gbbs/gbbs/macros.h"
+#include "gbbs/bridge.h"
+#include "gbbs/gbbs.h"
+#include "gbbs/macros.h"
 #include "parcluster/api/parallel/parallel-sequence-ops.h"
 
 namespace research_graph {
