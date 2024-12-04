@@ -13,7 +13,7 @@ git_repository(
 git_repository(
     name = "gbbs",
     remote = "https://github.com/ParAlg/gbbs.git",
-    branch = "master"
+    commit = "8b0f34037e699d394a788ae14018d564ce226662",  # gbbs commit
 )
 
 git_repository(
@@ -27,6 +27,7 @@ git_repository(
     name = "com_github_graph_mining",
     remote = "https://github.com/google/graph-mining.git",
     commit = "aaf5a5a1b84d35341776a8b1694640ea07c7c596"
+    # branch = "main"
 )
 
 
@@ -44,7 +45,8 @@ http_archive(
 git_repository(
     name = "com_github_gbbs",
     remote = "https://github.com/ParAlg/gbbs.git",
-    branch = "master"
+    # branch = "master"
+    commit = "8b0f34037e699d394a788ae14018d564ce226662",  # gbbs commit
 )
 
 git_repository(

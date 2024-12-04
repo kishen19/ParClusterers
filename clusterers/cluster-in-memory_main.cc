@@ -141,7 +141,7 @@ absl::Status WriteDendrogram(const char* filename,
   }
   auto nodes = dendrogram.Nodes();
   for (gbbs::uintE i = 0; i < nodes.size(); i++) {
-    if (nodes[i].parent_id != kNoParentId){
+    if (nodes[i].parent_id != kNoParentId && nodes[i].parent_id!=i){
       file << i << " " << nodes[i].parent_id << " " << nodes[i].merge_similarity << std::endl;
     }
   }
